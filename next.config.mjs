@@ -1,14 +1,13 @@
-
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ['three', '@react-three/fiber', '@react-three/drei'],
   typescript: {
-    // Allows production builds to successfully complete even if the project has type errors.
+    // This allows the production build to finish even if there are type errors
     ignoreBuildErrors: true,
   },
   eslint: {
-    // Allows production builds to successfully complete even if the project has ESLint errors.
+    // This allows the production build to finish even if there are linting errors
     ignoreDuringBuilds: true,
   },
 };

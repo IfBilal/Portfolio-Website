@@ -1,4 +1,3 @@
-
 {
   "compilerOptions": {
     "target": "es5",
@@ -23,13 +22,22 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "app/**/*.ts",
+    "app/**/*.tsx",
+    "components/**/*.ts",
+    "components/**/*.tsx"
+  ],
   "exclude": [
     "node_modules",
     "vite.config.ts",
     "vite-env.d.ts",
     "index.tsx",
     "App.tsx",
-    "index.html"
+    "index.html",
+    "dist",
+    ".next"
   ]
 }

@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Download, Github, GraduationCap, ArrowUpRight } from 'lucide-react';
 
@@ -73,7 +72,7 @@ export const SectionIntelligence: React.FC = () => {
     <section id="intelligence" className="py-32 px-12 md:px-24">
       <div className="mb-24 flex items-center justify-between border-b border-white/5 pb-10">
         <h2 className="text-6xl font-black tracking-tighter italic uppercase">TECHNICAL_MATRIX</h2>
-        <span className="mono text-[10px] text-white/20 tracking-[0.6em] uppercase italic font-bold">SYSTEM_STACK_v2.5</span>
+        <span className="mono text-[10px] text-white/20 tracking-[0.6em] uppercase italic font-bold">SYSTEM_STACK_v3.0</span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stack.map((s, i) => (
@@ -115,7 +114,7 @@ export const SectionDeployment: React.FC = () => (
           {[
             "Architected high-performance serverless Python backends using FastAPI on Azure Functions for scalable processing.",
             "Engineered multi-agent AI document processing logic for automated information extraction and complex reasoning.",
-            "Implemented advanced agentic pipelines utilizing DSPy, LangChain, and LangGraph frameworks for autonomous AI workflows."
+            "Implemented advanced agentic pipelines utilizing DSPy, LangChain, and LangGraph frameworks for autonomous workflows."
           ].map((log, i) => (
             <li key={i} className="text-white/40 text-xl leading-relaxed border-b border-white/5 pb-8 group-hover:text-white/80 transition-all font-light italic">
               <span className="text-[#2E5BFF] font-black mono text-sm mr-8">[{i+1}]</span> {log}
@@ -134,14 +133,14 @@ export const SectionArchive: React.FC = () => {
       title: "Playistan",
       tags: ["MongoDB", "Express", "React", "Node.js", "Socket.IO", "MERN"],
       link: "https://github.com/IfBilal/Playistan-ISE", 
-      desc: "Real-time sports booking platform with bidirectional community chat. Engineered with OTP-based MFA combined with JWT for secure user access. Built on the MERN stack with optimized real-time delivery." 
+      desc: "Real-time sports booking platform with bidirectional community chat. Engineered with OTP-based MFA combined with JWT for secure user access. Built on a pure MERN stack architecture." 
     },
     { 
       id: "yougram",
       title: "YouGram",
-      tags: ["MongoDB", "Express", "React", "Node.js", "Aggregation"],
+      tags: ["MongoDB Aggregation", "Express", "React", "Node.js"],
       link: "https://github.com/IfBilal/You-Gram", 
-      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication and complex data querying architectures." 
+      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication and complex data querying." 
     }
   ];
 
