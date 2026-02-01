@@ -9,12 +9,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { 
-  Cpu, 
   Activity, 
   Zap, 
   Terminal,
-  ShieldCheck,
-  ChevronRight
+  Cpu
 } from 'lucide-react';
 import { SectionIngress, SectionIntelligence, SectionDeployment, SectionArchive, SectionAcademic, SectionUplink } from '../components/Sections';
 
@@ -33,7 +31,8 @@ const BackgroundParticles = () => {
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
     if (pointsRef.current) {
-      pointsRef.current.rotation.y = time * 0.02;
+      pointsRef.current.rotation.y = time * 0.015;
+      pointsRef.current.rotation.x = Math.sin(time * 0.05) * 0.1;
       pointsRef.current.position.y = Math.sin(time * 0.1) * 0.2;
     }
   });
@@ -43,10 +42,10 @@ const BackgroundParticles = () => {
       <PointMaterial
         transparent
         color="#2E5BFF"
-        size={0.015}
+        size={0.012}
         sizeAttenuation={true}
         depthWrite={false}
-        opacity={0.25}
+        opacity={0.3}
       />
     </Points>
   );
@@ -60,7 +59,11 @@ export default function Home() {
   useEffect(() => {
     setMounted(true);
     gsap.registerPlugin(ScrollTrigger);
-    const lenis = new Lenis({ duration: 1.2 });
+    
+    const lenis = new Lenis({ 
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+    });
 
     function raf(time: number) {
       lenis.raf(time);
@@ -73,16 +76,17 @@ export default function Home() {
       ScrollTrigger.update();
     });
 
-    // Entrance Animations for Industrial Sections
+    // GSAP Scroll Trigger Entrance Animations
     const sections = gsap.utils.toArray('.animate-section');
     sections.forEach((section: any) => {
       gsap.fromTo(section, 
-        { opacity: 0, y: 40 },
+        { opacity: 0, y: 60, scale: 0.98 },
         { 
           opacity: 1, 
           y: 0, 
-          duration: 1, 
-          ease: "power2.out",
+          scale: 1,
+          duration: 1.2, 
+          ease: "expo.out",
           scrollTrigger: {
             trigger: section,
             start: "top 85%",
@@ -98,23 +102,22 @@ export default function Home() {
   if (!mounted) return <div className="bg-[#050505] min-h-screen" />;
 
   return (
-    <main ref={mainRef} className="relative min-h-screen bg-[#050505] selection:bg-[#2E5BFF]/30 overflow-x-hidden">
-      {/* 3D ATMOSPHERE */}
-      <div className="fixed inset-0 z-0 pointer-events-none opacity-50">
-        <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+    <main ref={mainRef} className="relative min-h-screen bg-[#050505] selection:bg-[#2E5BFF]/30 overflow-x-hidden font-inter">
+      {/* 3D FIELD */}
+      <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
+        <Canvas camera={{ position: [0, 0, 5], fov: 75 }} dpr={[1, 2]}>
           <BackgroundParticles />
         </Canvas>
       </div>
       
-      {/* SCANLINE OVERLAY */}
-      <div className="fixed inset-0 scanline z-50 pointer-events-none opacity-[0.03]" />
+      {/* HUD ELEMENTS */}
+      <div className="fixed inset-0 scanline z-50 pointer-events-none opacity-[0.04]" />
 
-      {/* TACTICAL HUD NAV */}
       <nav className="fixed top-0 left-0 w-full p-8 flex justify-between items-start z-[100] mix-blend-difference pointer-events-none">
         <div className="mono text-[10px] space-y-1">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#00E676] rounded-full animate-pulse shadow-[0_0_8px_#00E676]" />
-            <span className="font-black tracking-widest text-white/40 uppercase">CORE::STABLE</span>
+            <span className="font-black tracking-widest text-white/50 uppercase">SYS_ACTIVE::LTS_1.5</span>
           </div>
           <div className="text-white/20 uppercase tracking-[0.2em]">M_BILAL_TAHIR // CMD_SRV_3.0</div>
         </div>
@@ -124,15 +127,15 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* CHANNEL SIDEBAR */}
+      {/* VERTICAL COMMAND CHANNEL */}
       <aside className="fixed left-0 top-0 h-full w-20 flex flex-col justify-center items-center gap-10 border-r border-white/5 z-[90] glass pointer-events-auto">
-        {['ID', 'STK', 'LOG', 'ARC', 'EDU'].map((label) => (
+        {['ID', 'EDU', 'STK', 'LOG', 'ARC'].map((label) => (
           <button 
             key={label}
-            className="mono text-[9px] vertical-text font-black text-white/20 hover:text-[#2E5BFF] transition-all tracking-[0.5em] group relative py-6"
+            className="mono text-[9px] vertical-text font-black text-white/20 hover:text-[#2E5BFF] transition-all tracking-[0.6em] group relative py-6"
           >
             {label}
-            <div className="absolute left-0 top-0 h-0 w-[2px] bg-[#2E5BFF] group-hover:h-full transition-all duration-300" />
+            <div className="absolute left-0 top-0 h-0 w-[2px] bg-[#2E5BFF] group-hover:h-full transition-all duration-500 shadow-[0_0_10px_#2E5BFF]" />
           </button>
         ))}
         <div className="mt-auto pb-8 flex flex-col gap-6 opacity-10">
@@ -141,7 +144,7 @@ export default function Home() {
         </div>
       </aside>
 
-      {/* CONTENT SURFACE */}
+      {/* CORE SURFACE AREA */}
       <div className="pl-20">
         <div className="animate-section">
           <SectionIngress />
@@ -167,19 +170,27 @@ export default function Home() {
           <SectionUplink />
         </div>
 
-        <footer className="p-20 border-t border-white/5 mono text-[10px] text-white/15 flex flex-col md:flex-row justify-between items-center bg-black/80 gap-10">
-          <div className="uppercase tracking-[0.3em] font-medium italic">Built with Next.js 15 + React 19 // Source: Secure_Repo</div>
-          <div className="flex gap-12 uppercase tracking-[0.2em]">
-            <span>Sec_Layer: AES-256-GCM</span>
-            <span className="text-[#2E5BFF] font-black italic shadow-[0_0_10px_#2E5BFF/20]">Uplink: Verified</span>
+        <footer className="p-20 border-t border-white/5 mono text-[10px] text-white/15 flex flex-col md:flex-row justify-between items-center bg-black/90 backdrop-blur-md gap-10">
+          <div className="uppercase tracking-[0.4em] font-medium italic">
+            Next.js 15 // React 19 // Vercel_Build: LTS
+          </div>
+          <div className="flex gap-16 uppercase tracking-[0.2em]">
+            <div className="flex flex-col items-end">
+              <span className="text-[#2E5BFF] font-black shadow-[0_0_8px_#2E5BFF/30]">M. BILAL TAHIR</span>
+              <span className="opacity-40">3x Dean's List // FAST NUCES</span>
+            </div>
+            <div className="flex flex-col items-end">
+              <span className="text-[#00E676] font-black italic">Sync_Status: Verified</span>
+              <span className="opacity-20 italic">Node_ID: 0x42A19F</span>
+            </div>
           </div>
         </footer>
       </div>
 
-      {/* HUD TELEMETRY BAR */}
+      {/* HUD PROGRESS BAR */}
       <div className="fixed top-0 left-0 w-full h-[2px] bg-white/5 z-[200]">
         <div 
-          className="h-full bg-[#2E5BFF] shadow-[0_0_20px_#2E5BFF] transition-transform duration-100" 
+          className="h-full bg-[#2E5BFF] shadow-[0_0_25px_#2E5BFF] transition-transform duration-150 ease-out" 
           style={{ width: `${scrollProgress * 100}%` }} 
         />
       </div>

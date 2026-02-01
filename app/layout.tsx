@@ -1,3 +1,4 @@
+
 import React from "react";
 import type { Metadata } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
@@ -8,10 +9,9 @@ const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
   title: "M. BILAL TAHIR // SOFTWARE ENGINEER",
-  description: "Full-Stack & AI Engineering Portfolio. Based in Islamabad.",
+  description: "Full-Stack & AI Engineering Portfolio. Specialized in Serverless Python and AI Agent Systems. Based in Islamabad.",
 };
 
-// Added React import to satisfy TypeScript namespace requirement for React.ReactNode
 export default function RootLayout({
   children,
 }: Readonly<{
