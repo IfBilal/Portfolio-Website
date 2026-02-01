@@ -64,27 +64,28 @@ export const SectionAcademic: React.FC = () => (
 
 export const SectionIntelligence: React.FC = () => {
   const stack = [
-    { cat: "FRONTEND", items: ["TypeScript", "React 19", "Next.js 15", "Tailwind CSS", "JavaScript (ES6+)"] },
-    { cat: "BACKEND", items: ["Node.js", "Express.js", "Python (FastAPI/Flask)", "SQL (PostgreSQL/SQLite)", "MongoDB"] },
-    { cat: "REALTIME_INFRA", items: ["Socket.IO", "Bidirectional Sync", "Webhooks", "OTP-based MFA"] },
-    { cat: "OPS_DEPLOY", items: ["Vercel", "Linux (Ubuntu)", "Cloudinary (Asset Mgmt)", "Git"] }
+    { cat: "FRONTEND", items: ["React", "JavaScript (ES6+)", "HTML5", "CSS3", "Tailwind CSS", "React Router", "TypeScript"] },
+    { cat: "BACKEND", items: ["Node.js", "Express.js", "Python", "Flask", "Fast API"] },
+    { cat: "DATA & CLOUD", items: ["MongoDB", "MySQL", "Cloudinary", "REST APIs"] },
+    { cat: "SECURITY & LOGIC", items: ["JWT (Access/Refresh Tokens)", "OTP-based Authentication", "Bcrypt", "Socket.IO", "Protected Routes"] },
+    { cat: "TOOLS & OPS", items: ["Git/GitHub", "Vercel", "Railway", "Selenium", "Postman", "Linux (Ubuntu)"] }
   ];
 
   return (
     <section id="intelligence" className="py-32 px-12 md:px-24">
       <div className="mb-24 flex items-center justify-between border-b border-white/5 pb-10">
         <h2 className="text-6xl font-black tracking-tighter italic uppercase">TECHNICAL_MATRIX</h2>
-        <span className="mono text-[10px] text-white/20 tracking-[0.6em] uppercase italic font-bold">SYSTEM_STACK_v3.0</span>
+        <span className="mono text-[10px] text-white/20 tracking-[0.6em] uppercase italic font-bold">SYSTEM_STACK_v3.1</span>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {stack.map((s, i) => (
           <GlassBox key={i} className="bg-black/40">
-            <h3 className="mono text-[12px] font-black text-[#2E5BFF] mb-12 tracking-[0.3em] uppercase italic">{s.cat}</h3>
+            <h3 className="mono text-[11px] font-black text-[#2E5BFF] mb-10 tracking-[0.3em] uppercase italic leading-tight">{s.cat}</h3>
             <ul className="space-y-4">
               {s.items.map(item => (
-                <li key={item} className="text-xs font-bold text-white/30 hover:text-white transition-all flex items-center gap-4 group/item">
-                  <div className="w-1.5 h-1.5 bg-white/5 group-hover/item:bg-[#2E5BFF] group-hover/item:shadow-[0_0_10px_#2E5BFF] transition-all" />
-                  {item}
+                <li key={item} className="text-[11px] font-bold text-white/30 hover:text-white transition-all flex items-center gap-4 group/item">
+                  <div className="w-1.5 h-1.5 bg-white/5 group-hover/item:bg-[#2E5BFF] group-hover/item:shadow-[0_0_10px_#2E5BFF] transition-all shrink-0" />
+                  <span className="leading-tight">{item}</span>
                 </li>
               ))}
             </ul>

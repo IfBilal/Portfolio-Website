@@ -1,14 +1,92 @@
-<script type="importmap">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M. BILAL TAHIR // COMMAND_SURFACE</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
+    @theme {
+      --font-sans: "Inter Tight", ui-sans-serif, system-ui;
+      --font-mono: "JetBrains Mono", monospace;
+      --color-accent: #2E5BFF;
+      --color-success: #00E676;
+      --color-bg: #050505;
+    }
+
+    @layer base {
+      body {
+        @apply bg-bg text-white overflow-x-hidden antialiased cursor-none;
+      }
+    }
+
+    @layer components {
+      .glass {
+        @apply bg-black/60 backdrop-blur-xl border border-white/10;
+      }
+      .text-outline {
+        -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+      }
+      .vertical-text {
+        writing-mode: vertical-rl;
+        transform: rotate(180deg);
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+    }
+
+    /* Tactical Effects */
+    .scanline::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: rgba(46, 91, 255, 0.1);
+      animation: scan 6s linear infinite;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    @keyframes scan {
+      from { transform: translateY(-100vh); }
+      to { transform: translateY(100vh); }
+    }
+
+    .grid-bg {
+      background-image: 
+        linear-gradient(to right, rgba(128, 128, 128, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(128, 128, 128, 0.05) 1px, transparent 1px);
+      background-size: 4rem 4rem;
+    }
+
+    .wireframe-active * {
+      @apply !bg-transparent !border-accent/40 !text-accent !shadow-none !backdrop-blur-none;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+</head>
+<body class="scanline">
+  <div id="root"></div>
+  <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.4",
-    "framer-motion": "https://esm.sh/framer-motion@^12.29.2",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "framer-motion": "https://esm.sh/framer-motion@11.11.11?external=react,react-dom",
+    "lucide-react": "https://esm.sh/lucide-react@0.475.0",
+    "gsap": "https://esm.sh/gsap@3.12.5",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
     "react/": "https://esm.sh/react@^19.2.4/",
-    "gsap": "https://esm.sh/gsap@^3.14.2",
     "next": "https://esm.sh/next@^16.1.6",
     "next/": "https://esm.sh/next@^16.1.6/",
     "tailwindcss": "https://esm.sh/tailwindcss@^4.1.18"
   }
 }
 </script>
+  <script type="module" src="index.tsx"></script>
+</body>
+</html>
