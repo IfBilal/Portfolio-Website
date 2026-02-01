@@ -1,6 +1,6 @@
 {
   "name": "tahir-portfolio",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "private": true,
   "engines": {
     "node": ">=18.17.0"
@@ -12,7 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "15.1.6",
+    "next": "15.1.9",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "gsap": "^3.12.5",
