@@ -69,20 +69,22 @@ const App: React.FC = () => {
       smoothWheel: true,
     });
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     lenis.on('scroll', (e: any) => {
       ScrollTrigger.update();
       setScrollProgress(e.progress);
     });
 
-    gsap.ticker.add((time) => {
+    const tickerCb = (time: number) => {
       lenis.raf(time * 1000);
-    });
+    };
+    gsap.ticker.add(tickerCb);
 
     ScrollTrigger.scrollerProxy(document.body, {
       scrollTop(value) {
@@ -98,7 +100,8 @@ const App: React.FC = () => {
 
     return () => {
       lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
+      cancelAnimationFrame(rafId);
+      gsap.ticker.remove(tickerCb);
     };
   }, []);
 
@@ -116,7 +119,6 @@ const App: React.FC = () => {
       <Sidebar />
 
       <main className="relative z-10 ml-[64px]">
-        {/* HUD TELEMETRY */}
         <div className="fixed top-8 right-12 mono text-[9px] text-white/30 tracking-tighter text-right z-40 hidden lg:block">
           <div className="text-[#2E5BFF] font-black italic">PROTOCOL::COMMAND_SURFACE_V1.0</div>
           <div className="flex gap-4 justify-end mt-2">
