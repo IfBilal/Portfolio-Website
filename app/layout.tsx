@@ -1,4 +1,4 @@
-
+import React from "react";
 import type { Metadata } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description: "Full-Stack & AI Engineering Portfolio. Based in Islamabad.",
 };
 
+// Added React import to satisfy TypeScript namespace requirement for React.ReactNode
 export default function RootLayout({
   children,
 }: Readonly<{
