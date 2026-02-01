@@ -21,7 +21,7 @@ export const SectionIngress: React.FC = () => (
     </h1>
     <div className="max-w-3xl space-y-8">
       <p className="text-white/40 text-xl leading-relaxed font-light border-l-2 border-[#2E5BFF] pl-10 italic">
-        Software Engineer specializing in <span className="text-white font-bold uppercase tracking-wider">MERN Stack</span> and high-performance web architectures. 
+        Software Engineer based in <span className="text-white font-bold uppercase tracking-wider">Islamabad</span>, specializing in the <span className="text-white font-bold uppercase tracking-wider">MERN Stack</span> and AI-driven architectures. 
         Focused on building scalable full-stack applications with real-time bidirectional infrastructure.
       </p>
       
@@ -73,7 +73,7 @@ export const SectionIntelligence: React.FC = () => {
     <section id="intelligence" className="py-32 px-12 md:px-24">
       <div className="mb-24 flex items-center justify-between border-b border-white/5 pb-10">
         <h2 className="text-6xl font-black tracking-tighter italic uppercase">TECHNICAL_MATRIX</h2>
-        <span className="mono text-[10px] text-white/20 tracking-[0.6em] uppercase italic font-bold">SYSTEM_STACK_v2.2</span>
+        <span className="mono text-[10px] text-white/20 tracking-[0.6em] uppercase italic font-bold">SYSTEM_STACK_v2.5</span>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {stack.map((s, i) => (
@@ -132,7 +132,7 @@ export const SectionArchive: React.FC = () => {
     { 
       id: "playistan",
       title: "Playistan",
-      tags: ["Vite", "MongoDB", "Express", "React 19", "Node.js", "Socket.IO"],
+      tags: ["Vite", "MongoDB", "Express", "React", "Node.js", "Socket.IO"],
       link: "https://github.com/IfBilal/Playistan-ISE", 
       desc: "Real-time sports booking platform with bidirectional community chat. Engineered with OTP-based MFA combined with JWT for secure user access. Developed using Vite for optimized frontend delivery." 
     },
@@ -141,7 +141,7 @@ export const SectionArchive: React.FC = () => {
       title: "YouGram",
       tags: ["MongoDB", "Express", "React", "Node.js", "Aggregation"],
       link: "https://github.com/IfBilal/You-Gram", 
-      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized feeds. Features stateless JWT-based authentication with protected route logic." 
+      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication with protected route logic." 
     }
   ];
 
