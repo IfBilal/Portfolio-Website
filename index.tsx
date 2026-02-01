@@ -1,1 +1,0 @@
-// DEPRECATED: Entry point moved to app/page.tsx.

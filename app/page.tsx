@@ -10,8 +10,7 @@ import {
   Github,
   ArrowUpRight,
   Activity,
-  Zap,
-  ShieldAlert
+  Zap
 } from 'lucide-react';
 
 const Card = ({ children, title, className = "" }: { children?: React.ReactNode, title?: string, className?: string }) => (
@@ -38,10 +37,8 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white selection:bg-[#2E5BFF]/30 font-sans pb-20">
-      {/* Scanline Effect */}
       <div className="fixed inset-0 pointer-events-none z-[50] opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]" />
 
-      {/* Navigation Branding */}
       <nav className="fixed top-0 left-0 w-full p-8 flex justify-between items-start z-[100] pointer-events-none">
         <div className="font-mono text-[10px] space-y-1">
           <div className="flex items-center gap-2">
@@ -52,7 +49,6 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center px-6 md:px-24">
         <div className="mb-8 flex items-center gap-4 font-mono text-[#2E5BFF] text-[11px] font-black tracking-[0.6em] uppercase italic">
           <span className="w-12 h-[2px] bg-[#2E5BFF]" />
@@ -80,7 +76,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Professional Experience */}
       <section className="px-6 md:px-24 py-20">
         <div className="mb-16 border-l-4 border-[#2E5BFF] pl-6">
           <h2 className="text-4xl font-black tracking-tighter uppercase italic">Professional_Deployment</h2>
@@ -112,7 +107,6 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* Projects */}
       <section className="px-6 md:px-24 py-20 bg-white/[0.01]">
         <div className="mb-16 flex justify-between items-end">
           <div className="border-l-4 border-[#2E5BFF] pl-6">
@@ -150,7 +144,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Education */}
       <section className="px-6 md:px-24 py-20">
         <Card title="ACADEMIC_INTEL">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
@@ -164,7 +157,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-center md:text-right">
-              <div className="font-mono text-[12px] bg-[#2E5BFF]/10 border border-[#2E5BFF]/30 px-6 py-2 text-[#2E5BFF] font-black uppercase tracking-widest mb-2">
+              <div className="font-mono text-[12px] bg-[#2E5BFF]/10 border border-[#2E5BFF]/40 px-10 py-3 text-[#2E5BFF] font-black uppercase tracking-widest mb-2">
                 3x DEAN'S LIST HONORS
               </div>
               <span className="font-mono text-[9px] text-white/10 uppercase tracking-[0.5em]">FAST_PK_ARCHIVE_0x0</span>
@@ -173,7 +166,6 @@ export default function Home() {
         </Card>
       </section>
 
-      {/* Footer */}
       <footer className="px-6 md:px-24 py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em] italic">
           Next.js 15 // React 19 // Vercel_LTS_Deployment
