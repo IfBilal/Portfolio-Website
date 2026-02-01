@@ -21,7 +21,7 @@ export const SectionIngress: React.FC = () => (
     </h1>
     <div className="max-w-3xl space-y-8">
       <p className="text-white/40 text-xl leading-relaxed font-light border-l-2 border-[#2E5BFF] pl-10 italic">
-        Software Engineer based in <span className="text-white font-bold uppercase tracking-wider">Islamabad</span>, specializing in the <span className="text-white font-bold uppercase tracking-wider">MERN Stack</span> and AI-driven architectures. 
+        Software Engineer based in <span className="text-white font-bold uppercase tracking-wider">Islamabad</span>, specializing in the <span className="text-white font-bold uppercase tracking-wider">MERN Stack</span> and high-performance engineering. 
         Focused on building scalable full-stack applications with real-time bidirectional infrastructure.
       </p>
       
@@ -115,7 +115,7 @@ export const SectionDeployment: React.FC = () => (
           {[
             "Architected high-performance serverless Python backends using FastAPI on Azure Functions for scalable processing.",
             "Engineered multi-agent AI document processing logic for automated information extraction and complex reasoning.",
-            "Implemented advanced agentic pipelines utilizing DSPy, LangChain, and LangGraph frameworks for autonomous workflows."
+            "Implemented advanced agentic pipelines utilizing DSPy, LangChain, and LangGraph frameworks for autonomous AI workflows."
           ].map((log, i) => (
             <li key={i} className="text-white/40 text-xl leading-relaxed border-b border-white/5 pb-8 group-hover:text-white/80 transition-all font-light italic">
               <span className="text-[#2E5BFF] font-black mono text-sm mr-8">[{i+1}]</span> {log}
@@ -132,16 +132,16 @@ export const SectionArchive: React.FC = () => {
     { 
       id: "playistan",
       title: "Playistan",
-      tags: ["Vite", "MongoDB", "Express", "React", "Node.js", "Socket.IO"],
+      tags: ["MongoDB", "Express", "React", "Node.js", "Socket.IO", "MERN"],
       link: "https://github.com/IfBilal/Playistan-ISE", 
-      desc: "Real-time sports booking platform with bidirectional community chat. Engineered with OTP-based MFA combined with JWT for secure user access. Developed using Vite for optimized frontend delivery." 
+      desc: "Real-time sports booking platform with bidirectional community chat. Engineered with OTP-based MFA combined with JWT for secure user access. Built on the MERN stack with optimized real-time delivery." 
     },
     { 
       id: "yougram",
       title: "YouGram",
       tags: ["MongoDB", "Express", "React", "Node.js", "Aggregation"],
       link: "https://github.com/IfBilal/You-Gram", 
-      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication with protected route logic." 
+      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication and complex data querying architectures." 
     }
   ];
 
