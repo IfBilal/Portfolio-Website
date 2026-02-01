@@ -1,3 +1,4 @@
+'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
 import { ModuleWrapper } from './ModuleWrapper';
@@ -6,8 +7,12 @@ const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()_+';
 
 const useScramble = (text: string, duration = 1500) => {
   const [display, setDisplay] = useState('');
+  const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
+    setMounted(true);
+    if (!mounted) return;
+
     let start: number | null = null;
     const animate = (timestamp: number) => {
       if (!start) start = timestamp;
@@ -23,18 +28,24 @@ const useScramble = (text: string, duration = 1500) => {
       setDisplay(scrambled);
       if (progress < duration) requestAnimationFrame(animate);
     };
-    requestAnimationFrame(animate);
-  }, [text, duration]);
+    const frameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frameId);
+  }, [text, duration, mounted]);
   
-  return display;
+  return display || text;
 };
 
 export const HeroModule: React.FC<{ className?: string }> = ({ className }) => {
   const [coords, setCoords] = useState({ x: 0, y: 0 });
+  const [mounted, setMounted] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   
   const name = useScramble("M. BILAL TAHIR", 2000);
   const role = useScramble("SOFTWARE ENGINEER | FULL-STACK | AI ENGINEERING", 2500);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     if (containerRef.current) {
@@ -45,6 +56,8 @@ export const HeroModule: React.FC<{ className?: string }> = ({ className }) => {
       });
     }
   };
+
+  if (!mounted) return <div className={`h-[400px] ${className}`} />;
 
   return (
     <ModuleWrapper className={className} title="HERO_IDENTITY_ENGINE" id="identity">
@@ -82,7 +95,6 @@ export const HeroModule: React.FC<{ className?: string }> = ({ className }) => {
           </p>
         </div>
 
-        {/* Telemetry Coords */}
         <div className="absolute bottom-0 right-0 mono text-[10px] text-white/10 opacity-0 group-hover:opacity-100 transition-opacity">
           REL_X: {coords.x} / REL_Y: {coords.y}
         </div>

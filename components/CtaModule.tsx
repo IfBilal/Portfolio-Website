@@ -1,3 +1,4 @@
+'use client';
 
 import React from 'react';
 import { ModuleWrapper } from './ModuleWrapper';
@@ -15,7 +16,6 @@ export const CtaModule: React.FC<{ className?: string }> = ({ className }) => {
         >
           <span>INITIATE_CV_DOWNLOAD</span>
           <Download size={18} className="group-hover:translate-y-0.5 transition-transform" />
-          {/* Decorative bar */}
           <div className="absolute bottom-0 left-0 h-1 bg-white/30 group-hover:w-full w-0 transition-all duration-500" />
         </a>
 

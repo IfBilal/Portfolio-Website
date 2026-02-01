@@ -1,8 +1,16 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { User, Cpu, Briefcase, Terminal, Activity, ShieldCheck, Zap, BookOpen } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const anchors = [
     { id: 'identity', icon: User, label: 'ID_IDENT' },
     { id: 'tech', icon: Cpu, label: 'TECH_MATRIX' },
@@ -10,6 +18,8 @@ export const Sidebar: React.FC = () => {
     { id: 'experience', icon: Briefcase, label: 'DEPLOY_LOG' },
     { id: 'archive', icon: ShieldCheck, label: 'SECURE_REPO' },
   ];
+
+  if (!mounted) return <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 border-r border-white/10 z-[100]" />;
 
   return (
     <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 backdrop-blur-3xl border-r border-white/10 flex flex-col items-center py-10 z-[100]">

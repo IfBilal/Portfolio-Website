@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import { Download, Github, GraduationCap, ArrowUpRight } from 'lucide-react';
 

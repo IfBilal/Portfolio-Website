@@ -1,3 +1,4 @@
+'use client';
 
 import React from 'react';
 import { ModuleWrapper } from './ModuleWrapper';
@@ -7,7 +8,6 @@ export const ExperienceModule: React.FC<{ className?: string }> = ({ className }
     <ModuleWrapper className={className} title="INTEL_EXPERIENCE_LOG" id="experience">
       <div className="space-y-8">
         <div className="relative pl-8 border-l border-white/10 group">
-          {/* Active indicator */}
           <div className="absolute top-0 -left-1.5 w-3 h-3 bg-[#00E676] group-hover:scale-125 transition-transform" />
           
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
@@ -34,7 +34,6 @@ export const ExperienceModule: React.FC<{ className?: string }> = ({ className }
           </ul>
         </div>
 
-        {/* Placeholder for more experience or education */}
         <div className="mono text-[10px] text-white/20 pt-4 flex items-center gap-4">
           <div className="flex-1 h-px bg-white/5" />
           SYSTEM_END_OF_LOG
