@@ -8,18 +8,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { Sidebar } from './components/Sidebar';
 import { CustomCursor } from './components/CustomCursor';
-import { TerminalModule } from './components/TerminalModule';
 import { 
   SectionIngress, 
   SectionIntelligence, 
   SectionDeployment, 
   SectionArchive, 
+  SectionAcademic,
   SectionUplink 
 } from './components/Sections';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const BackgroundParticles: React.FC<{ wireframe: boolean }> = ({ wireframe }) => {
+const BackgroundParticles: React.FC = () => {
   const pointsRef = useRef<THREE.Points>(null!);
   const [positions] = useState(() => {
     const pos = new Float32Array(12000 * 3);
@@ -47,18 +47,17 @@ const BackgroundParticles: React.FC<{ wireframe: boolean }> = ({ wireframe }) =>
     <Points ref={pointsRef} positions={positions} stride={3} frustumCulled={false}>
       <PointMaterial
         transparent
-        color={wireframe ? "#00E676" : "#2E5BFF"}
+        color="#2E5BFF"
         size={0.01}
         sizeAttenuation={true}
         depthWrite={false}
-        opacity={wireframe ? 0.9 : 0.5}
+        opacity={0.5}
       />
     </Points>
   );
 };
 
 const App: React.FC = () => {
-  const [wireframeMode, setWireframeMode] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -109,7 +108,7 @@ const App: React.FC = () => {
     <div ref={containerRef} className="relative bg-[#050505] min-h-screen text-white selection:bg-[#2E5BFF]/30 antialiased">
       <div className="fixed inset-0 z-0 pointer-events-none">
         <Canvas camera={{ position: [0, 0, 5], fov: 75 }} dpr={[1, 2]}>
-          <BackgroundParticles wireframe={wireframeMode} />
+          <BackgroundParticles />
         </Canvas>
       </div>
 
@@ -120,17 +119,18 @@ const App: React.FC = () => {
 
       <main className="relative z-10 ml-[64px]">
         <div className="fixed top-8 right-12 mono text-[9px] text-white/30 tracking-tighter text-right z-40 hidden lg:block">
-          <div className="text-[#2E5BFF] font-black italic">PROTOCOL::COMMAND_SURFACE_V1.0</div>
+          <div className="text-[#2E5BFF] font-black italic uppercase">PROTOCOL::MERN_STACK_V2</div>
           <div className="flex gap-4 justify-end mt-2">
             <span>Y_PROGRESS: {Math.round(scrollProgress * 100)}%</span>
             <span className="w-16 h-1.5 bg-white/5 relative overflow-hidden mt-0.5">
               <div className="absolute left-0 top-0 h-full bg-[#2E5BFF] shadow-[0_0_8px_#2E5BFF]" style={{ width: `${scrollProgress * 100}%` }} />
             </span>
           </div>
-          <div className="mt-1 opacity-50">NODE_ISLAMABAD_PK // STABLE</div>
+          <div className="mt-1 opacity-50 uppercase">NODE_ISLAMABAD_PK // STABLE</div>
         </div>
 
         <SectionIngress />
+        <SectionAcademic />
         <SectionIntelligence />
         <SectionDeployment />
         <SectionArchive />
@@ -138,27 +138,22 @@ const App: React.FC = () => {
         
         <footer className="p-20 border-t border-white/5 mono text-[10px] text-white/30 tracking-widest flex flex-col md:flex-row justify-between items-center gap-12 uppercase bg-black/80 backdrop-blur-xl">
           <div className="space-y-2">
-            <div className="text-white/60">3x Dean's List - FAST NUCES [cite: 32]</div>
-            <div className="italic opacity-50 font-medium tracking-[0.3em]">Engineering Intelligence // Decrypting Complexity</div>
+            <div className="text-white/60 uppercase">3x Dean's List - FAST NUCES</div>
+            <div className="italic opacity-50 font-medium tracking-[0.3em]">Full-Stack Engineering // Solving Complexity</div>
           </div>
           <div className="flex gap-16">
             <div className="flex flex-col items-end">
-              <span className="text-[#2E5BFF] font-black">CORE_SYSTEM_v1.0.42</span>
-              <span className="text-[#00E676] text-[8px] animate-pulse">SYSTEM_UPLINK_SECURE</span>
+              <span className="text-[#2E5BFF] font-black">M_BILAL_TAHIR_V2.0</span>
+              <span className="text-[#00E676] text-[8px] animate-pulse">CONNECTION_SECURE</span>
             </div>
             <div className="h-10 w-px bg-white/10" />
             <div className="flex flex-col items-end">
               <span>LATENCY: 0.02ms</span>
-              <span>EST. 2024 // TAHIR_ENGINE</span>
+              <span className="opacity-20 italic">Node_ID: 0x42A19F</span>
             </div>
           </div>
         </footer>
       </main>
-
-      <TerminalModule 
-        onToggleWireframe={() => setWireframeMode(!wireframeMode)} 
-        wireframeMode={wireframeMode}
-      />
     </div>
   );
 };

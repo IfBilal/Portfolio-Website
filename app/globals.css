@@ -15,6 +15,7 @@
 body {
   background-color: #050505;
   color: #ffffff;
+  font-family: var(--font-inter);
 }
 
 .mono {
@@ -56,4 +57,8 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #2E5BFF;
   border-radius: 10px;
+}
+
+.animate-section {
+  will-change: transform, opacity;
 }

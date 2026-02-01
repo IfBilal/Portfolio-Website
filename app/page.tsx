@@ -10,9 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Lenis from 'lenis';
 import { 
   Activity, 
-  Zap, 
-  Terminal,
-  Cpu
+  Zap
 } from 'lucide-react';
 import { SectionIngress, SectionIntelligence, SectionDeployment, SectionArchive, SectionAcademic, SectionUplink } from '../components/Sections';
 
@@ -76,7 +74,6 @@ export default function Home() {
       ScrollTrigger.update();
     });
 
-    // GSAP Scroll Trigger Entrance Animations
     const sections = gsap.utils.toArray('.animate-section');
     sections.forEach((section: any) => {
       gsap.fromTo(section, 
@@ -102,8 +99,8 @@ export default function Home() {
   if (!mounted) return <div className="bg-[#050505] min-h-screen" />;
 
   return (
-    <main ref={mainRef} className="relative min-h-screen bg-[#050505] selection:bg-[#2E5BFF]/30 overflow-x-hidden font-inter">
-      {/* 3D FIELD */}
+    <main ref={mainRef} className="relative min-h-screen bg-[#050505] overflow-x-hidden font-inter">
+      {/* 3D ATMOSPHERE */}
       <div className="fixed inset-0 z-0 pointer-events-none opacity-40">
         <Canvas camera={{ position: [0, 0, 5], fov: 75 }} dpr={[1, 2]}>
           <BackgroundParticles />
@@ -117,9 +114,9 @@ export default function Home() {
         <div className="mono text-[10px] space-y-1">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 bg-[#00E676] rounded-full animate-pulse shadow-[0_0_8px_#00E676]" />
-            <span className="font-black tracking-widest text-white/50 uppercase">SYS_ACTIVE::LTS_1.5</span>
+            <span className="font-black tracking-widest text-white/50 uppercase">MERN_STACK_V2::STABLE</span>
           </div>
-          <div className="text-white/20 uppercase tracking-[0.2em]">M_BILAL_TAHIR // CMD_SRV_3.0</div>
+          <div className="text-white/20 uppercase tracking-[0.2em]">M_BILAL_TAHIR // CORE_SYSTEM</div>
         </div>
         <div className="mono text-[10px] text-right space-y-1 hidden md:block">
           <div className="text-[#2E5BFF] font-black italic tracking-widest uppercase">LATENCY: 0.01ms</div>
@@ -127,11 +124,16 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* VERTICAL COMMAND CHANNEL */}
+      {/* SIDEBAR NAVIGATION */}
       <aside className="fixed left-0 top-0 h-full w-20 flex flex-col justify-center items-center gap-10 border-r border-white/5 z-[90] glass pointer-events-auto">
         {['ID', 'EDU', 'STK', 'LOG', 'ARC'].map((label) => (
           <button 
             key={label}
+            onClick={() => {
+              const ids: Record<string, string> = { ID: 'identity', EDU: 'academic', STK: 'intelligence', LOG: 'deployment', ARC: 'archive' };
+              const el = document.getElementById(ids[label]);
+              if (el) el.scrollIntoView({ behavior: 'smooth' });
+            }}
             className="mono text-[9px] vertical-text font-black text-white/20 hover:text-[#2E5BFF] transition-all tracking-[0.6em] group relative py-6"
           >
             {label}
@@ -144,7 +146,7 @@ export default function Home() {
         </div>
       </aside>
 
-      {/* CORE SURFACE AREA */}
+      {/* CONTENT SURFACE */}
       <div className="pl-20">
         <div className="animate-section">
           <SectionIngress />
