@@ -4,6 +4,7 @@ import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { CustomCursor } from "@/components/CustomCursor";
+import { ParticleBackground } from "@/components/ParticleBackground";
 
 const inter = Inter_Tight({ subsets: ["latin"], variable: "--font-inter" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark scroll-smooth">
       <body className={`${inter.variable} ${mono.variable} antialiased bg-[#050505] text-white selection:bg-[#2E5BFF]/30 overflow-x-hidden cursor-none`}>
+        <ParticleBackground />
         <CustomCursor />
         <Sidebar />
         <div className="pl-[64px]">

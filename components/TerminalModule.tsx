@@ -50,10 +50,10 @@ export const TerminalModule: React.FC<TerminalProps> = ({ onToggleWireframe, wir
   return (
     <div className="fixed bottom-8 left-8 z-[100]">
       {isOpen ? (
-        <div className="w-[420px] h-[280px] glass p-6 flex flex-col shadow-2xl border-2 border-white/5">
+        <div className="w-[420px] h-[280px] glass p-6 flex flex-col shadow-[0_20px_60px_rgba(46,91,255,0.3)] border-2 border-[#2E5BFF]/20 backdrop-blur-[40px]">
           <div className="flex justify-between items-center mb-6 border-b border-white/10 pb-3">
             <div className="flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full bg-[#2E5BFF] animate-pulse" />
+              <div className="w-2 h-2 rounded-full bg-[#2E5BFF] animate-pulse shadow-[0_0_10px_#2E5BFF]" />
               <span className="mono text-[10px] text-[#2E5BFF] font-black tracking-widest uppercase italic">SYSTEM_CMD_NODE_v1</span>
             </div>
             <button onClick={() => setIsOpen(false)} className="text-white/30 hover:text-white transition-colors">
@@ -79,7 +79,7 @@ export const TerminalModule: React.FC<TerminalProps> = ({ onToggleWireframe, wir
       ) : (
         <button 
           onClick={() => setIsOpen(true)}
-          className="glass p-5 text-[#2E5BFF] hover:bg-[#2E5BFF] hover:text-white transition-all flex items-center gap-4 group shadow-xl"
+          className="glass p-5 text-[#2E5BFF] hover:bg-[#2E5BFF] hover:text-white transition-all flex items-center gap-4 group shadow-[0_10px_40px_rgba(46,91,255,0.2)] hover:shadow-[0_10px_60px_rgba(46,91,255,0.4)] border border-[#2E5BFF]/30"
         >
           <Terminal size={22} className="group-hover:rotate-12 transition-transform" />
           <span className="mono text-[11px] font-black tracking-[0.4em] hidden md:block uppercase italic">INIT_TERMINAL</span>

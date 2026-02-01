@@ -13,16 +13,17 @@ export const Sidebar: React.FC = () => {
 
   const anchors = [
     { id: 'identity', icon: User, label: 'ID_IDENT' },
-    { id: 'tech', icon: Cpu, label: 'TECH_MATRIX' },
-    { id: 'academic', icon: BookOpen, label: 'ACADEMIC_INTEL' },
-    { id: 'experience', icon: Briefcase, label: 'DEPLOY_LOG' },
-    { id: 'archive', icon: ShieldCheck, label: 'SECURE_REPO' },
+    { id: 'tech', icon: Cpu, label: 'SKILLS' },
+    { id: 'experience', icon: Briefcase, label: 'EXPERIENCE' },
+    { id: 'archive', icon: ShieldCheck, label: 'PROJECTS' },
+    { id: 'academic', icon: BookOpen, label: 'EDUCATION' },
+    { id: 'contact', icon: Terminal, label: 'CONTACT' },
   ];
 
   if (!mounted) return <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 border-r border-white/10 z-[100]" />;
 
   return (
-    <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 backdrop-blur-3xl border-r border-white/10 flex flex-col items-center py-10 z-[100]">
+    <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 backdrop-blur-3xl border-r border-white/10 flex flex-col items-center py-10 z-[100] shadow-[4px_0_20px_rgba(0,0,0,0.5)]">
       <div className="mb-20 flex flex-col items-center gap-4">
         <div className="relative">
           <motion.div 
@@ -36,28 +37,43 @@ export const Sidebar: React.FC = () => {
       </div>
 
       <div className="flex-1 flex flex-col gap-10">
-        {anchors.map((item) => (
-          <button
+        {anchors.map((item, index) => (
+          <motion.button
             key={item.id}
             onClick={() => {
               const el = document.getElementById(item.id);
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group relative flex flex-col items-center justify-center p-4 text-white/20 hover:text-[#2E5BFF] transition-all"
+            className="group relative flex flex-col items-center justify-center p-4 text-white/20 hover:text-[#2E5BFF] transition-all duration-300"
             title={item.label}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: index * 0.1, duration: 0.5 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <item.icon size={20} strokeWidth={1.2} />
-            <div className="absolute left-0 w-[2px] h-0 bg-[#2E5BFF] group-hover:h-full transition-all duration-300" />
-            <span className="absolute left-[64px] glass border border-white/10 px-4 py-2 text-[9px] mono font-bold tracking-[0.2em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none -translate-x-2 group-hover:translate-x-0 uppercase">
+            <item.icon size={20} strokeWidth={1.2} className="group-hover:drop-shadow-[0_0_8px_rgba(46,91,255,0.5)]" />
+            <div className="absolute left-0 w-[2px] h-0 bg-[#2E5BFF] group-hover:h-full transition-all duration-300 shadow-[0_0_10px_#2E5BFF]" />
+            <span className="absolute left-[64px] glass border border-white/10 px-4 py-2 text-[9px] mono font-bold tracking-[0.2em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none -translate-x-2 group-hover:translate-x-0 uppercase shadow-[0_0_20px_rgba(46,91,255,0.2)]">
               {item.label}
             </span>
-          </button>
+          </motion.button>
         ))}
       </div>
 
       <div className="mt-auto flex flex-col gap-6 text-white/5 pb-4">
-        <Activity size={16} strokeWidth={1} />
-        <Zap size={16} strokeWidth={1} />
+        <motion.div
+          animate={{ opacity: [0.05, 0.2, 0.05] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        >
+          <Activity size={16} strokeWidth={1} />
+        </motion.div>
+        <motion.div
+          animate={{ opacity: [0.05, 0.2, 0.05] }}
+          transition={{ duration: 2.5, repeat: Infinity, delay: 0.5 }}
+        >
+          <Zap size={16} strokeWidth={1} />
+        </motion.div>
         <div className="h-12 w-[1px] bg-gradient-to-t from-white/20 to-transparent" />
       </div>
     </nav>
