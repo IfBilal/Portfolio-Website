@@ -10,7 +10,8 @@ import {
   Github,
   ArrowUpRight,
   Activity,
-  Zap
+  Zap,
+  ShieldAlert
 } from 'lucide-react';
 
 const Card = ({ children, title, className = "" }: { children?: React.ReactNode, title?: string, className?: string }) => (
@@ -40,6 +41,17 @@ export default function Home() {
       {/* Scanline Effect */}
       <div className="fixed inset-0 pointer-events-none z-[50] opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]" />
 
+      {/* Navigation Branding */}
+      <nav className="fixed top-0 left-0 w-full p-8 flex justify-between items-start z-[100] pointer-events-none">
+        <div className="font-mono text-[10px] space-y-1">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-[#00E676] rounded-full animate-pulse" />
+            <span className="font-black tracking-widest text-white/60 uppercase">SYSTEM_STABLE</span>
+          </div>
+          <div className="text-white/20 uppercase tracking-[0.1em]">M. BILAL TAHIR // ARCH_VER_2025</div>
+        </div>
+      </nav>
+
       {/* Hero Section */}
       <section className="min-h-screen flex flex-col justify-center px-6 md:px-24">
         <div className="mb-8 flex items-center gap-4 font-mono text-[#2E5BFF] text-[11px] font-black tracking-[0.6em] uppercase italic">
@@ -53,8 +65,8 @@ export default function Home() {
         <div className="max-w-2xl space-y-8">
           <p className="text-white/50 text-xl leading-relaxed font-light border-l-2 border-[#2E5BFF] pl-8 italic">
             Software Engineer based in <span className="text-white font-bold">Islamabad</span>. 
-            Focused on high-performance <span className="text-white">MERN stacks</span> and 
-            <span className="text-white"> AI Agent architectures</span>.
+            Focused on high-performance <span className="text-white font-bold uppercase">MERN stacks</span> and 
+            <span className="text-white font-bold uppercase"> AI Agent architectures</span>.
           </p>
           <div className="flex gap-4">
             <a 
@@ -84,9 +96,18 @@ export default function Home() {
             <span className="font-mono text-[10px] text-white/40 h-fit border border-white/10 px-3 py-1">NOV 2025 - JAN 2026</span>
           </div>
           <ul className="space-y-4 max-w-4xl font-light text-white/60 italic leading-relaxed">
-            <li className="flex gap-4"><span className="text-[#2E5BFF] font-mono font-black">[01]</span> Architected serverless Python backends using FastAPI on Azure Functions.</li>
-            <li className="flex gap-4"><span className="text-[#2E5BFF] font-mono font-black">[02]</span> Engineered multi-agent AI document processing logic for automated reasoning.</li>
-            <li className="flex gap-4"><span className="text-[#2E5BFF] font-mono font-black">[03]</span> Implemented agentic pipelines utilizing DSPy, LangChain, and LangGraph.</li>
+            <li className="flex gap-4">
+              <span className="text-[#2E5BFF] font-mono font-black">[01]</span> 
+              <span>Architected serverless Python backends using <span className="text-white font-bold">FastAPI</span> on <span className="text-white font-bold">Azure Functions</span>.</span>
+            </li>
+            <li className="flex gap-4">
+              <span className="text-[#2E5BFF] font-mono font-black">[02]</span> 
+              <span>Engineered <span className="text-white font-bold">multi-agent AI</span> document processing logic for automated reasoning.</span>
+            </li>
+            <li className="flex gap-4">
+              <span className="text-[#2E5BFF] font-mono font-black">[03]</span> 
+              <span>Implemented agentic pipelines utilizing <span className="text-white font-bold">DSPy, LangChain</span>, and <span className="text-white font-bold">LangGraph</span>.</span>
+            </li>
           </ul>
         </Card>
       </section>
@@ -106,9 +127,9 @@ export default function Home() {
               <h3 className="text-3xl font-black italic uppercase">Playistan</h3>
               <a href="https://github.com/IfBilal/Playistan-ISE" target="_blank" className="text-white/20 hover:text-white transition-colors"><Github size={20} /></a>
             </div>
-            <p className="text-white/50 mb-8 italic font-light">Real-time sports booking platform with bidirectional community chat. Engineered with MERN, Socket.IO, and JWT/OTP security.</p>
+            <p className="text-white/50 mb-8 italic font-light">Real-time sports booking platform with bidirectional community chat. Engineered with <span className="text-white">MERN, Socket.IO</span>, and JWT/OTP security.</p>
             <div className="flex gap-3 flex-wrap">
-              {["MERN", "Socket.IO", "OTP-Auth"].map(tag => (
+              {["MERN", "Socket.IO", "OTP-Auth", "MongoDB"].map(tag => (
                 <span key={tag} className="font-mono text-[9px] bg-white/5 border border-white/10 px-3 py-1 text-white/40 uppercase font-black">{tag}</span>
               ))}
             </div>
@@ -119,9 +140,9 @@ export default function Home() {
               <h3 className="text-3xl font-black italic uppercase">YouGram</h3>
               <a href="https://github.com/IfBilal/You-Gram" target="_blank" className="text-white/20 hover:text-white transition-colors"><Github size={20} /></a>
             </div>
-            <p className="text-white/50 mb-8 italic font-light">Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized feeds and complex data architectures.</p>
+            <p className="text-white/50 mb-8 italic font-light">Enterprise social platform using advanced <span className="text-white">MongoDB Aggregation Pipelines</span> for personalized discovery feeds.</p>
             <div className="flex gap-3 flex-wrap">
-              {["React", "MongoDB", "Aggregations"].map(tag => (
+              {["React", "MongoDB", "Aggregations", "Express"].map(tag => (
                 <span key={tag} className="font-mono text-[9px] bg-white/5 border border-white/10 px-3 py-1 text-white/40 uppercase font-black">{tag}</span>
               ))}
             </div>
@@ -155,12 +176,12 @@ export default function Home() {
       {/* Footer */}
       <footer className="px-6 md:px-24 py-20 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="font-mono text-[9px] text-white/20 uppercase tracking-[0.3em] italic">
-          Next.js 15 // React 19 // Deploy_Stable
+          Next.js 15 // React 19 // Vercel_LTS_Deployment
         </div>
         <div className="flex gap-12 font-mono text-[10px] font-black text-[#2E5BFF] uppercase tracking-widest italic">
           <a href="https://linkedin.com/in/m-bilaltahir" target="_blank" className="hover:text-white transition-colors">LinkedIn</a>
           <a href="https://github.com/IfBilal" target="_blank" className="hover:text-white transition-colors">GitHub</a>
-          <span>+92 335 5558223</span>
+          <span className="text-white/20">+92 335 5558223</span>
         </div>
       </footer>
     </main>
