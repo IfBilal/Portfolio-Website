@@ -1,15 +1,16 @@
-
 import React from "react";
 import type { Metadata } from "next";
 import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { Sidebar } from "@/components/Sidebar";
+import { CustomCursor } from "@/components/CustomCursor";
 
 const inter = Inter_Tight({ subsets: ["latin"], variable: "--font-inter" });
 const mono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "M. BILAL TAHIR // MERN STACK ENGINEER",
-  description: "Full-Stack Engineer specializing in high-performance MERN architectures, real-time bidirectional systems, and secure cloud orchestration.",
+  title: "M. BILAL TAHIR // COMMAND_SURFACE",
+  description: "Next.js 15 High-Performance Engineering Portfolio. Dark Industrial Design.",
 };
 
 export default function RootLayout({
@@ -18,9 +19,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className={`${inter.variable} ${mono.variable} antialiased bg-[#050505] text-white selection:bg-[#2E5BFF]/30 overflow-x-hidden`}>
-        {children}
+    <html lang="en" className="dark scroll-smooth">
+      <body className={`${inter.variable} ${mono.variable} antialiased bg-[#050505] text-white selection:bg-[#2E5BFF]/30 overflow-x-hidden cursor-none`}>
+        <CustomCursor />
+        <Sidebar />
+        <div className="pl-[64px]">
+          {children}
+        </div>
+        {/* The terminal is rendered in page.tsx to handle local state more easily if needed, 
+            or it can stay here for global access. */}
       </body>
     </html>
   );

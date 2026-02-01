@@ -1,19 +1,18 @@
-
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, Cpu, Briefcase, Terminal, Activity, ShieldCheck, Zap } from 'lucide-react';
+import { User, Cpu, Briefcase, Terminal, Activity, ShieldCheck, Zap, BookOpen } from 'lucide-react';
 
 export const Sidebar: React.FC = () => {
   const anchors = [
     { id: 'identity', icon: User, label: 'ID_IDENT' },
     { id: 'tech', icon: Cpu, label: 'TECH_MATRIX' },
+    { id: 'academic', icon: BookOpen, label: 'ACADEMIC_INTEL' },
     { id: 'experience', icon: Briefcase, label: 'DEPLOY_LOG' },
     { id: 'archive', icon: ShieldCheck, label: 'SECURE_REPO' },
-    { id: 'contact', icon: Terminal, label: 'COMMS_SYNC' },
   ];
 
   return (
-    <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 backdrop-blur-3xl border-r border-white/10 flex flex-col items-center py-10 z-50">
+    <nav className="fixed left-0 top-0 bottom-0 w-[64px] bg-black/95 backdrop-blur-3xl border-r border-white/10 flex flex-col items-center py-10 z-[100]">
       <div className="mb-20 flex flex-col items-center gap-4">
         <div className="relative">
           <motion.div 
@@ -23,10 +22,10 @@ export const Sidebar: React.FC = () => {
           />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-5 h-5 border-2 border-[#00E676]/20 rounded-full animate-ping" />
         </div>
-        <div className="mono text-[9px] text-[#00E676] font-black vertical-text tracking-[0.3em] uppercase">SYSTEM::LIVE</div>
+        <div className="mono text-[9px] text-[#00E676] font-black vertical-text tracking-[0.3em] uppercase whitespace-nowrap">SYSTEM::LIVE</div>
       </div>
 
-      <div className="flex-1 flex flex-col gap-12">
+      <div className="flex-1 flex flex-col gap-10">
         {anchors.map((item) => (
           <button
             key={item.id}
@@ -34,22 +33,22 @@ export const Sidebar: React.FC = () => {
               const el = document.getElementById(item.id);
               if (el) el.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="group relative flex flex-col items-center justify-center p-4 text-white/20 hover:text-[#2E5BFF] transition-all transform hover:scale-110"
+            className="group relative flex flex-col items-center justify-center p-4 text-white/20 hover:text-[#2E5BFF] transition-all"
             title={item.label}
           >
-            <item.icon size={22} strokeWidth={1.2} />
-            <div className="absolute left-0 w-[3px] h-0 bg-[#2E5BFF] group-hover:h-full transition-all duration-300 shadow-[0_0_10px_#2E5BFF]" />
-            <span className="absolute left-[74px] glass border border-white/20 px-5 py-2 text-[10px] mono font-black tracking-[0.3em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none -translate-x-4 group-hover:translate-x-0 shadow-2xl uppercase">
+            <item.icon size={20} strokeWidth={1.2} />
+            <div className="absolute left-0 w-[2px] h-0 bg-[#2E5BFF] group-hover:h-full transition-all duration-300" />
+            <span className="absolute left-[64px] glass border border-white/10 px-4 py-2 text-[9px] mono font-bold tracking-[0.2em] whitespace-nowrap opacity-0 group-hover:opacity-100 transition-all pointer-events-none -translate-x-2 group-hover:translate-x-0 uppercase">
               {item.label}
             </span>
           </button>
         ))}
       </div>
 
-      <div className="mt-auto flex flex-col gap-8 text-white/5 pb-6">
-        <Activity size={18} strokeWidth={1} className="hover:text-white/40 transition-colors cursor-help" />
-        <Zap size={18} strokeWidth={1} className="hover:text-[#2E5BFF] transition-colors cursor-help" />
-        <div className="h-16 w-[1px] bg-gradient-to-t from-white/20 to-transparent" />
+      <div className="mt-auto flex flex-col gap-6 text-white/5 pb-4">
+        <Activity size={16} strokeWidth={1} />
+        <Zap size={16} strokeWidth={1} />
+        <div className="h-12 w-[1px] bg-gradient-to-t from-white/20 to-transparent" />
       </div>
     </nav>
   );
