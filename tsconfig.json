@@ -38,6 +38,8 @@
     "App.tsx",
     "index.html",
     "dist",
-    ".next"
+    ".next",
+    "out",
+    "build"
   ]
 }

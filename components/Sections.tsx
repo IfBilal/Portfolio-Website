@@ -20,8 +20,8 @@ export const SectionIngress: React.FC = () => (
     </h1>
     <div className="max-w-3xl space-y-8">
       <p className="text-white/40 text-xl leading-relaxed font-light border-l-2 border-[#2E5BFF] pl-10 italic">
-        Software Engineer based in <span className="text-white font-bold uppercase tracking-wider">Islamabad</span>, specializing in the <span className="text-white font-bold uppercase tracking-wider">MERN Stack</span> and high-performance engineering. 
-        Focused on building scalable full-stack applications with real-time bidirectional infrastructure.
+        Software Engineer based in <span className="text-white font-bold uppercase tracking-wider">Islamabad</span>. 
+        Specializing in high-performance engineering, the <span className="text-white font-bold uppercase tracking-wider">MERN Stack</span>, and complex AI-driven architectures.
       </p>
       
       <div className="flex gap-10">
@@ -131,16 +131,16 @@ export const SectionArchive: React.FC = () => {
     { 
       id: "playistan",
       title: "Playistan",
-      tags: ["MongoDB", "Express", "React", "Node.js", "Socket.IO", "MERN"],
+      tags: ["MongoDB", "Socket.IO", "MERN Stack"],
       link: "https://github.com/IfBilal/Playistan-ISE", 
       desc: "Real-time sports booking platform with bidirectional community chat. Engineered with OTP-based MFA combined with JWT for secure user access. Built on a pure MERN stack architecture." 
     },
     { 
       id: "yougram",
       title: "YouGram",
-      tags: ["MongoDB Aggregation", "Express", "React", "Node.js"],
+      tags: ["MongoDB Aggregation", "Enterprise Social Media"],
       link: "https://github.com/IfBilal/You-Gram", 
-      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication and complex data querying." 
+      desc: "Enterprise social platform using advanced MongoDB Aggregation Pipelines for personalized discovery feeds. Features stateless JWT-based authentication and complex data querying architectures." 
     }
   ];
 
