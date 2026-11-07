@@ -6,10 +6,12 @@ export function StoryMotion() {
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const progress = document.querySelector<HTMLElement>('.reading-progress');
+    const header = document.querySelector<HTMLElement>('.header');
+    const hero = document.querySelector<HTMLElement>('.hero');
     const updateProgress = () => {
-      if (!progress) return;
       const height = document.documentElement.scrollHeight - window.innerHeight;
-      progress.style.transform = `scaleX(${height > 0 ? window.scrollY / height : 0})`;
+      if (progress) progress.style.transform = `scaleX(${height > 0 ? window.scrollY / height : 0})`;
+      if (header && hero) header.classList.toggle('on-light', hero.getBoundingClientRect().bottom <= header.offsetHeight);
     };
     updateProgress();
     window.addEventListener('scroll', updateProgress, { passive: true });
