@@ -17,11 +17,11 @@ The work section leads with Rahbar and CivicPulse because together they show AI,
 1. **The promise:** The opening says what Bilal builds and offers a direct route to work or contact.
 2. **The tension:** A short editorial pause asks what happens when an AI demo faces real decisions and failure.
 3. **The proof:** Six case files each begin with a concrete question, then show the system, the engineering decision, and the source. Rahbar and CivicPulse lead because they show grounded answers and reliable operations.
-4. **The method:** Four steps move from framing the problem to grounding intelligence, building the experience, and keeping it dependable.
+4. **The method:** Four scroll-linked scenes move from framing the problem to grounding intelligence, building the experience, and keeping it dependable. The diagram, color, and label change as each step reaches the reading position. Progress controls also let visitors jump directly to a step.
 5. **The person:** Dated roles, education, and learning show where those habits came from.
 6. **The invitation:** The page closes with a plain, visible email action.
 
-The reading progress line and case transitions help visitors feel movement through this sequence. They do not gate content or replace standard navigation.
+The reading progress line, responsive hero diagram, case transitions, and method scenes help visitors feel movement through this sequence. They do not gate content or replace standard navigation.
 
 ## Visual system
 
@@ -33,7 +33,7 @@ The reading progress line and case transitions help visitors feel movement throu
 
 **Composition:** A large opening statement, asymmetrical monogram artwork, a full-width perspective pause, an interactive case study viewer, a four-step engineering method, experience, education, and a direct contact close. The case viewer shows the question, build, engineering decision, and source for each project. Its artwork uses type and system paths drawn with CSS, so it is fast, responsive, and specific to the work.
 
-**Interaction:** Useful motion: reading progress, section reveals, rotating technical diagrams, and animated case transitions. Visitors can switch cases with buttons or keyboard arrows. The page respects reduced-motion preferences and keeps important content available without animation. Mobile uses a single reading column and keeps the contact action visible in the content flow.
+**Interaction:** Useful motion: reading progress, section reveals, a pointer-responsive hero diagram, rotating technical diagrams, animated case transitions, and a scroll-linked method. Visitors can switch cases with buttons or keyboard arrows and jump among method steps with labeled controls. The page respects reduced-motion preferences and keeps important content available without animation. Mobile uses a single reading column and keeps the contact action visible in the content flow.
 
 ## Content discipline
 
