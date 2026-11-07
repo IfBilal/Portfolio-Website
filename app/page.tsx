@@ -3,14 +3,15 @@ import { WorkExplorer } from '@/components/WorkExplorer';
 import { StoryMotion } from '@/components/StoryMotion';
 import { MethodStory } from '@/components/MethodStory';
 import { HeroMotion } from '@/components/HeroMotion';
+import { CaseStudies } from '@/components/CaseStudies';
 
 const projects = [
   { number:'01', title:'Rahbar', category:'Grounded AI / Platform engineering', mark:'ر', theme:'rahbar',
     description:'A university rules assistant that answers from FAST-NUCES documents, cites section and page, and abstains when the source does not support an answer. Built with Taimoor Shaukat; its indexer, read-only API replicas, cache, and evaluation gate run on Kubernetes.',
-    stack:'RAG · FastAPI · Chroma · Redis · Docker · Kubernetes', link:'https://github.com/IfBilal/Rahbar', path:['INGEST','RETRIEVE','CITE'], question:'What if a student needs the right rule, not a plausible answer?', principle:'A source or a clear abstention beats confident guesswork.' },
+    stack:'RAG · FastAPI · Chroma · Redis · Docker · Kubernetes', link:'https://github.com/IfBilal/Rahbar', path:['INGEST','RETRIEVE','CITE'], question:'What if a student needs the right rule, not a plausible answer?', principle:'A source or a clear abstention beats confident guesswork.', screenshot:'/cases/rahbar/interface.png', study:'#case-rahbar' },
   { number:'02', title:'CivicPulse', category:'Full stack AI / DevOps', mark:'C', theme:'civic',
     description:'A municipal complaint platform with AI triage, an operator dashboard, and a fallback that keeps submissions working when the model fails. Built with Docker, Kubernetes, CI/CD, observability, and real failure testing.',
-    stack:'React · FastAPI · PostgreSQL · Redis · Kubernetes', link:'https://github.com/IfBilal/CivicPulse-SCD', path:['REPORT','TRIAGE','RESOLVE'], question:'What happens when the AI service goes down?', principle:'A reliable fallback keeps the civic workflow moving.' },
+    stack:'React · FastAPI · PostgreSQL · Redis · Kubernetes', link:'https://github.com/IfBilal/CivicPulse-SCD', path:['REPORT','TRIAGE','RESOLVE'], question:'What happens when the AI service goes down?', principle:'A reliable fallback keeps the civic workflow moving.', screenshot:'/cases/civicpulse/dashboard.png', study:'#case-civicpulse' },
   { number:'03', title:'SkyEye', category:'Computer vision / Research', mark:'S', theme:'sky',
     description:'Aerial object detection across RGB and thermal images. Fast YOLO detectors lead; a vision language model steps in when confidence drops. The RGB model reached 94.11% mAP50 in the research evaluation.',
     stack:'YOLO · VLMs · FastAPI · Streamlit · Docker', link:'https://github.com/IfBilal/UAV-Dependability-lab-Air-Object-Detection', path:['DETECT','CONFIDENCE','FALLBACK'], question:'How do you know when a detector is unsure?', principle:'Measure confidence, then bring in a second kind of vision.' },
@@ -50,6 +51,8 @@ export default function Home() {
     <section className="statement shell" data-reveal><span className="section-label">01 / The question</span><p>A demo is easy to admire. The real test starts when the answer must be <em>correct, useful, and still there when something fails.</em></p><span className="statement-mark" aria-hidden="true">✳</span></section>
 
     <section id="work" className="work shell" data-reveal><div className="section-head"><div><span className="section-label">02 / The evidence</span><h2>From question<br/>to <em>working system.</em></h2></div><p>Follow six real problems from first question to engineering decision. Choose a case to explore the build.</p></div><WorkExplorer projects={projects} /><a className="archive-link" href="https://github.com/IfBilal?tab=repositories" target="_blank" rel="noopener noreferrer">Explore the full GitHub archive <Arrow/></a></section>
+
+    <CaseStudies />
 
     <section id="about" className="about shell" data-reveal><div className="about-intro"><span className="section-label">03 / The method</span><h2>One engineer.<br/><em>Across the stack.</em></h2><p>I work backward from a real decision: what a person needs to know, what the system can prove, and how it behaves when the ideal path breaks. Then I build across the stack to make that decision easier.</p></div><MethodStory stages={capabilities} /></section>
 

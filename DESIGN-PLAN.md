@@ -10,13 +10,13 @@ The primary visitor is a prospective client who needs evidence that Bilal can sc
 4. Has he worked in real settings? — dated experience and specific responsibilities.
 5. How can I contact or verify him? — email, source repositories, LinkedIn, and current CV.
 
-The work section leads with Rahbar and CivicPulse because together they show AI, full stack delivery, Docker, Kubernetes, CI/CD, and reliability. Other projects broaden the evidence without diluting the first impression. Claims come from the CV, project READMEs, and the supplied LinkedIn profile. Team work is credited.
+The work section leads with Rahbar and CivicPulse because together they show AI, full stack delivery, Docker, Kubernetes, CI/CD, and reliability. Their case files use real screenshots from the project repositories and link to the evidence behind evaluation and reliability results. Other projects broaden the evidence without diluting the first impression. Claims come from the CV, project READMEs, and the supplied LinkedIn profile. Team work is credited.
 
 ## Story arc
 
 1. **The promise:** The opening says what Bilal builds and offers a direct route to work or contact.
 2. **The tension:** A short editorial pause asks what happens when an AI demo faces real decisions and failure.
-3. **The proof:** Six case files each begin with a concrete question, then show the system, the engineering decision, and the source. Rahbar and CivicPulse lead because they show grounded answers and reliable operations.
+3. **The proof:** Six case files each begin with a concrete question, then show the system, the engineering decision, and the source. Rahbar and CivicPulse lead because they show grounded answers and reliable operations; their deeper studies show actual interfaces, Bilal's contribution, and bounded test results.
 4. **The method:** Four scroll-linked scenes move from framing the problem to grounding intelligence, building the experience, and keeping it dependable. The diagram, color, and label change as each step reaches the reading position. Progress controls also let visitors jump directly to a step.
 5. **The person:** Dated roles, education, and learning show where those habits came from.
 6. **The invitation:** The page closes with a plain, visible email action.
@@ -40,6 +40,7 @@ The reading progress line, responsive hero diagram, case transitions, and method
 - Use “full stack AI engineer” as the positioning, backed by projects and experience.
 - Say exactly what was built; avoid unverified client outcomes, scale, or performance claims.
 - Keep SkyEye's 94.11% RGB mAP50 tied to its research evaluation.
+- Label Rahbar evaluation numbers by their 19-question test set and CivicPulse reliability numbers by their controlled test conditions. Link directly to the project evidence.
 - Put repository links on every case study and a live link only where one is confirmed.
 - Copy the current CV to `/public/BilalTahir_CV.pdf` for a durable download link.
 - Update certificate details when direct credential URLs are available; link to LinkedIn for the public record in the meantime.

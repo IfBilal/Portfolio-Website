@@ -2,6 +2,7 @@
 
 import { type KeyboardEvent, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import Image from 'next/image';
 
 type Project = {
   number: string;
@@ -16,6 +17,8 @@ type Project = {
   path: string[];
   question: string;
   principle: string;
+  screenshot?: string;
+  study?: string;
 };
 
 export function WorkExplorer({ projects }: { projects: Project[] }) {
@@ -53,11 +56,13 @@ export function WorkExplorer({ projects }: { projects: Project[] }) {
       ><span className="tab-number">{item.number}</span><span className="tab-name">{item.title}</span><span className="tab-arrow" aria-hidden="true">↗</span></button>)}
     </div>
     <div id="project-panel" role="tabpanel" aria-labelledby={`project-tab-${active}`} className={`case-panel case-${project.theme}`} key={project.number} tabIndex={0}>
-      <div className="case-visual" aria-hidden="true">
+      <div className={`case-visual ${project.screenshot ? 'has-screen' : ''}`} aria-hidden="true">
         <div className="case-visual-top"><span>CASE FILE / {project.number}</span><span>BT. 2026</span></div>
-        <div className="case-orbit case-orbit-outer"/><div className="case-orbit case-orbit-inner"/>
-        <div className="case-cross cross-a">+</div><div className="case-cross cross-b">+</div>
-        <div className="case-glyph">{project.mark}</div>
+        {project.screenshot ? <div className="case-screen"><Image src={project.screenshot} alt="" fill sizes="(max-width: 700px) 80vw, 34vw" priority={active === 0} /></div> : <>
+          <div className="case-orbit case-orbit-outer"/><div className="case-orbit case-orbit-inner"/>
+          <div className="case-cross cross-a">+</div><div className="case-cross cross-b">+</div>
+          <div className="case-glyph">{project.mark}</div>
+        </>}
         <div className="case-flow">{project.path.map((step, index) => <span key={step}><b>{String(index + 1).padStart(2, '0')}</b>{step}</span>)}</div>
       </div>
       <div className="case-content">
@@ -67,7 +72,7 @@ export function WorkExplorer({ projects }: { projects: Project[] }) {
         <p className="case-description">{project.description}</p>
         <div className="case-principle"><span>THE ENGINEERING DECISION</span><p>{project.principle}</p></div>
         <p className="case-stack">{project.stack}</p>
-        <div className="case-actions"><a href={project.link} target="_blank" rel="noopener noreferrer">Explore source <ArrowUpRight size={18}/></a>{project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Visit live product <ArrowUpRight size={18}/></a>}</div>
+        <div className="case-actions">{project.study && <a href={project.study}>Read the case study <ArrowUpRight size={18}/></a>}<a href={project.link} target="_blank" rel="noopener noreferrer">Explore source <ArrowUpRight size={18}/></a>{project.live && <a href={project.live} target="_blank" rel="noopener noreferrer">Visit live product <ArrowUpRight size={18}/></a>}</div>
       </div>
     </div>
     <div className="work-controls"><span>Choose a case, or use the arrow keys</span><div><button type="button" onClick={() => select(active - 1)} aria-label="Previous project"><ArrowLeft size={19}/></button><span>{String(active + 1).padStart(2, '0')} / {String(projects.length).padStart(2, '0')}</span><button type="button" onClick={() => select(active + 1)} aria-label="Next project"><ArrowRight size={19}/></button></div></div>
