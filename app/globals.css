@@ -144,7 +144,7 @@ section[id]{scroll-margin-top:85px}
 .hero-art .art-caption{color:#29483e}
 .art-caption{left:12%;right:12%;bottom:11%;text-align:center;transform:rotate(9deg);font-size:clamp(8px,.75vw,10px);line-height:1.55;letter-spacing:.045em;color:#29483e;text-shadow:0 1px #dce6d3}
 @media(max-width:1000px){.hero-grid{grid-template-columns:minmax(0,1.2fr) minmax(250px,.8fr);gap:24px}.hero h1{font-size:clamp(56px,7vw,88px)}.hero-art{width:min(100%,340px)}.hero-copy>p{font-size:16px}}
-@media(max-width:700px){.hero-art{overflow:visible}.hero-art:before{border-radius:50%;overflow:hidden}.art-caption{bottom:9%;font-size:8px;background:#cbdabe;padding:2px 4px;border-radius:3px}.hero h1{font-size:clamp(52px,12.3vw,76px)}.hero-art{width:min(74vw,300px)}}
+@media(max-width:700px){.hero-art{overflow:visible}.hero-art:before{border-radius:50%;overflow:hidden}.art-caption{bottom:13%;font-size:8px;background:transparent;padding:0;border-radius:0}.hero h1{font-size:clamp(52px,12.3vw,76px)}.hero-art{width:min(74vw,300px)}}
 @media(max-width:360px){.header nav{gap:8px}.header nav a{font-size:9px}.hero h1{font-size:49px}.hero-actions{gap:14px}.hero-actions .button{gap:12px;padding:13px 12px}}
 @media(max-width:700px){.work-tabs{width:calc(100% + 44px);max-width:100vw}}
 @media(max-width:700px){.work-explorer{overflow:hidden}.work-tabs{width:calc(100vw - 1px);margin-left:calc(-1 * clamp(22px,5.1vw,88px));margin-right:calc(-1 * clamp(22px,5.1vw,88px));padding-left:clamp(22px,5.1vw,88px);padding-right:clamp(22px,5.1vw,88px)}}
