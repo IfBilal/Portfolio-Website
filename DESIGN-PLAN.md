@@ -12,6 +12,17 @@ The primary visitor is a prospective client who needs evidence that Bilal can sc
 
 The work section leads with Rahbar and CivicPulse because together they show AI, full stack delivery, Docker, Kubernetes, CI/CD, and reliability. Other projects broaden the evidence without diluting the first impression. Claims come from the CV, project READMEs, and the supplied LinkedIn profile. Team work is credited.
 
+## Story arc
+
+1. **The promise:** The opening says what Bilal builds and offers a direct route to work or contact.
+2. **The tension:** A short editorial pause asks what happens when an AI demo faces real decisions and failure.
+3. **The proof:** Six case files each begin with a concrete question, then show the system, the engineering decision, and the source. Rahbar and CivicPulse lead because they show grounded answers and reliable operations.
+4. **The method:** Four steps move from framing the problem to grounding intelligence, building the experience, and keeping it dependable.
+5. **The person:** Dated roles, education, and learning show where those habits came from.
+6. **The invitation:** The page closes with a plain, visible email action.
+
+The reading progress line and case transitions help visitors feel movement through this sequence. They do not gate content or replace standard navigation.
+
 ## Visual system
 
 **Creative direction:** An engineer's field journal. Editorial typography and restrained technical diagrams make the work feel authored. The page avoids dashboard chrome, particle effects, faux terminals, invented metrics, and generic gradient cards.
@@ -20,9 +31,9 @@ The work section leads with Rahbar and CivicPulse because together they show AI,
 
 **Type:** Instrument Serif provides a human, slightly imperfect contrast within large headlines. DM Sans carries the main copy; DM Mono is reserved for labels, dates, and technical metadata. This gives a clear hierarchy without making every line look like a console.
 
-**Composition:** A large opening statement, asymmetrical monogram artwork, a full-width perspective pause, two featured case studies, smaller supporting cases, capabilities, experience, education, and a direct contact close. Project artwork uses type and system paths drawn with CSS, so it is fast, responsive, and specific to the work.
+**Composition:** A large opening statement, asymmetrical monogram artwork, a full-width perspective pause, an interactive case study viewer, a four-step engineering method, experience, education, and a direct contact close. The case viewer shows the question, build, engineering decision, and source for each project. Its artwork uses type and system paths drawn with CSS, so it is fast, responsive, and specific to the work.
 
-**Interaction:** Only useful motion: small link and card transitions, anchor navigation, and project hover response. The page respects reduced-motion preferences. Every important action is available by keyboard. Mobile uses a single reading column and keeps the contact action visible in the content flow.
+**Interaction:** Useful motion: reading progress, section reveals, rotating technical diagrams, and animated case transitions. Visitors can switch cases with buttons or keyboard arrows. The page respects reduced-motion preferences and keeps important content available without animation. Mobile uses a single reading column and keeps the contact action visible in the content flow.
 
 ## Content discipline
 
