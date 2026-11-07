@@ -149,3 +149,27 @@ section[id]{scroll-margin-top:85px}
 .statement-mark{color:#557d5c}
 .contact{background:#172e2a}
 @media(max-width:700px){.header-cta{border-color:#86a58e}.header.on-light .header-cta{border-color:#a8b7aa}.hero-foot{border-top-color:#5e7d6c}.hero-art,.hero-art:hover{box-shadow:15px 20px 0 #10251f}.hero .availability{color:#d3e5c8}}
+
+.brief-builder{background:#f0eadf;padding-top:105px;padding-bottom:110px}
+.brief-heading{display:grid;grid-template-columns:1fr .48fr;gap:16px 70px;align-items:end;margin-bottom:55px}
+.brief-heading .section-label{grid-column:1/-1}
+.brief-heading h2{font-size:clamp(48px,5.7vw,88px);line-height:.96;letter-spacing:-.065em;margin:0}
+.brief-heading h2 em{font-family:var(--serif);font-weight:400;color:#587b68}
+.brief-heading>p{font-size:15px;line-height:1.65;color:#5e6d64;max-width:390px;margin:0 0 6px}
+.brief-workbench{display:grid;grid-template-columns:minmax(225px,.68fr) minmax(0,1.32fr);border:1px solid #b9c6b8;background:#faf8f2;box-shadow:0 20px 45px #203d3610}
+.brief-controls{padding:27px;border-right:1px solid #c4cec1}
+.brief-control-group{display:grid;gap:7px}.brief-control-group+.brief-control-group{margin-top:35px}
+.brief-label{font:10px var(--mono);letter-spacing:.08em;color:#64806c;margin-bottom:5px}
+.brief-control-group button{appearance:none;border:1px solid transparent;background:transparent;text-align:left;padding:12px 10px;color:#43564b;font:600 13px var(--sans);cursor:pointer;display:flex;align-items:center;gap:10px;transition:background .2s,border-color .2s,color .2s}
+.brief-control-group button:hover{background:#f0f2e9}.brief-control-group button.selected{background:#e6eddd;border-color:#b2c5a9;color:#203d31}
+.brief-control-group button small{font:10px var(--mono);color:#688471}.brief-control-group button>span{margin-left:auto;color:#65806b;opacity:0;transition:opacity .2s}.brief-control-group button.selected>span{opacity:1}
+.brief-control-group.priorities button{font-size:12px;font-weight:500;padding:9px 10px}.brief-output{padding:29px clamp(22px,4vw,55px) 34px;animation:case-enter .35s ease both}
+.brief-output-top{display:flex;justify-content:space-between;gap:12px;font:10px var(--mono);letter-spacing:.06em;color:#61806b}
+.brief-prompt{font:italic clamp(23px,2.6vw,36px)/1.2 var(--serif);color:#25382e;margin:37px 0 30px}.brief-prompt em{color:#66846f}
+.brief-answer{display:grid;grid-template-columns:1fr 1fr;gap:22px 32px}
+.brief-answer>div{border-top:1px solid #c3cec0;padding-top:12px}.brief-answer>div span,.brief-priority-note b{font:9px var(--mono);letter-spacing:.07em;color:#6c8774}
+.brief-answer p{font-size:13px;line-height:1.55;color:#43564b;margin:8px 0 0}
+.brief-priority-note{display:flex;align-items:baseline;gap:14px;border-top:1px solid #c3cec0;margin-top:25px;padding-top:14px}.brief-priority-note span{font:11px/1.5 var(--mono);color:#536a5b}
+.brief-invite{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #273c30;margin-top:28px;padding:16px 0;font-size:14px;font-weight:700;color:#2c4838}.brief-invite span{font-size:18px;transition:transform .2s}.brief-invite:hover span{transform:translate(3px,-3px)}
+@media(max-width:800px){.brief-heading{display:block}.brief-heading h2{margin:15px 0 20px}.brief-workbench{grid-template-columns:1fr}.brief-controls{border-right:0;border-bottom:1px solid #c4cec1}.brief-control-group{grid-template-columns:repeat(3,minmax(0,1fr))}.brief-label{grid-column:1/-1}.brief-control-group button{min-height:53px;align-items:flex-start;justify-content:flex-start;flex-direction:column;gap:5px;font-size:11px}.brief-control-group button>span{display:none}.brief-control-group.priorities button{font-size:10px}}
+@media(max-width:700px){.brief-builder{padding-top:75px;padding-bottom:80px}.brief-heading h2{font-size:clamp(46px,11vw,68px)}.brief-control-group{gap:5px}.brief-control-group button{padding:9px 6px;font-size:10px}.brief-control-group.priorities button{padding:9px 6px;font-size:9px}.brief-output{padding:23px 19px 27px}.brief-output-top{font-size:8px}.brief-prompt{margin:28px 0 22px}.brief-answer{gap:17px 14px}.brief-answer p{font-size:12px}.brief-priority-note{display:grid;gap:7px}.brief-invite{font-size:12px}}

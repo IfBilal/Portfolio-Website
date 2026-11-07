@@ -3,6 +3,7 @@ import { WorkExplorer } from '@/components/WorkExplorer';
 import { StoryMotion } from '@/components/StoryMotion';
 import { MethodStory } from '@/components/MethodStory';
 import { HeroMotion } from '@/components/HeroMotion';
+import { BriefBuilder } from '@/components/BriefBuilder';
 
 const projects = [
   { number:'01', title:'Rahbar', category:'Grounded AI / Platform engineering', mark:'ر', theme:'rahbar',
@@ -52,6 +53,8 @@ export default function Home() {
     <section id="work" className="work shell" data-reveal><div className="section-head"><div><span className="section-label">02 / The evidence</span><h2>From question<br/>to <em>working system.</em></h2></div><p>Follow six real problems from first question to engineering decision. Choose a case to explore the build.</p></div><WorkExplorer projects={projects} /><a className="archive-link" href="https://github.com/IfBilal?tab=repositories" target="_blank" rel="noopener noreferrer">Explore the full GitHub archive <Arrow/></a></section>
 
     <section id="about" className="about shell" data-reveal><div className="about-intro"><span className="section-label">03 / The method</span><h2>One engineer.<br/><em>Across the stack.</em></h2><p>I work backward from a real decision: what a person needs to know, what the system can prove, and how it behaves when the ideal path breaks. Then I build across the stack to make that decision easier.</p></div><MethodStory stages={capabilities} /></section>
+
+    <BriefBuilder />
 
     <section id="experience" className="experience shell" data-reveal><div className="section-head"><div><span className="section-label">04 / The practice</span><h2>Experience that<br/><em>ships.</em></h2></div><p>Research depth, production constraints, and client delivery shape the way I build.</p></div><div className="experience-list">{experience.map((e,i)=><article className="experience-row" key={e.company}><span className="row-index">0{i+1}</span><div className="role"><h3>{e.role}</h3><span>{e.company}</span></div><p>{e.detail}</p><time>{e.date}</time></article>)}</div></section>
 
