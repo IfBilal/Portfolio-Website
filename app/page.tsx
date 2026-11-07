@@ -27,7 +27,7 @@ const projects = [
 
 const experience = [
   { date:'Apr 2026 — Present', role:'Full Stack Developer', company:'Markhor Systems', detail:'Building client products end to end, including a medical LMS with Zoom automation, attendance, recording uploads, and live community chat.' },
-  { date:'Jun — Aug 2026', role:'Computer Vision Research Intern', company:'NCRA UAV Dependability Lab', detail:'Built RGB and thermal aerial image datasets, benchmarked five detectors, and designed the confidence-gated detector to VLM fallback used in SkyEye.' },
+  { date:'Jun — Aug 2026', role:'Computer Vision Research Intern', company:'NCRA UAV Dependability Lab', detail:'Built RGB and thermal datasets for 4 aerial-object classes; benchmarked 5 detectors and helped develop SkyEye’s confidence-gated YOLO → VLM pipeline. Its RGB model reached 94.11% mAP50 in evaluation.' },
   { date:'Aug 2026', role:'AI Engineer Intern', company:'Prompt To Flow · NIC', detail:'Built a FastAPI workflow engine that converts natural language into executable graphs, with provider fallback, tenant credit gating, and key rotation.' },
   { date:'Nov 2025 — Jan 2026', role:'Software Engineer Intern', company:'RainMakerz', detail:'Contributed to a serverless Python and FastAPI backend on Azure Functions in a 19-agent document processing system.' },
 ];
