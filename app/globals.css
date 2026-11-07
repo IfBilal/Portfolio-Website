@@ -173,3 +173,15 @@ section[id]{scroll-margin-top:85px}
 .brief-invite{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid #273c30;margin-top:28px;padding:16px 0;font-size:14px;font-weight:700;color:#2c4838}.brief-invite span{font-size:18px;transition:transform .2s}.brief-invite:hover span{transform:translate(3px,-3px)}
 @media(max-width:800px){.brief-heading{display:block}.brief-heading h2{margin:15px 0 20px}.brief-workbench{grid-template-columns:1fr}.brief-controls{border-right:0;border-bottom:1px solid #c4cec1}.brief-control-group{grid-template-columns:repeat(3,minmax(0,1fr))}.brief-label{grid-column:1/-1}.brief-control-group button{min-height:53px;align-items:flex-start;justify-content:flex-start;flex-direction:column;gap:5px;font-size:11px}.brief-control-group button>span{display:none}.brief-control-group.priorities button{font-size:10px}}
 @media(max-width:700px){.brief-builder{padding-top:75px;padding-bottom:80px}.brief-heading h2{font-size:clamp(46px,11vw,68px)}.brief-control-group{gap:5px}.brief-control-group button{padding:9px 6px;font-size:10px}.brief-control-group.priorities button{padding:9px 6px;font-size:9px}.brief-output{padding:23px 19px 27px}.brief-output-top{font-size:8px}.brief-prompt{margin:28px 0 22px}.brief-answer{gap:17px 14px}.brief-answer p{font-size:12px}.brief-priority-note{display:grid;gap:7px}.brief-invite{font-size:12px}}
+.brief-builder{padding-top:65px;padding-bottom:65px;background:#203d36;color:#f4f0e8}
+.brief-compact .section-label{color:#c8dfad}
+.brief-compact-main{display:flex;align-items:end;justify-content:space-between;gap:35px;margin-top:19px}
+.brief-compact-main h2{font-size:clamp(48px,6vw,88px);line-height:.92;letter-spacing:-.065em;margin:0}
+.brief-compact-main h2 em{font-family:var(--serif);font-weight:400;color:#c5dba9}
+.brief-compact-copy{max-width:450px;padding-bottom:5px}
+.brief-compact-copy p{font-size:16px;line-height:1.6;color:#c3d1c5;margin:0 0 20px}
+.brief-compact-copy a{display:inline-flex;align-items:center;gap:22px;background:#c9dfa9;color:#1b342c;padding:13px 16px;font-size:13px;font-weight:700;transition:gap .2s,background .2s}
+.brief-compact-copy a:hover{gap:30px;background:#e0efc4}
+.brief-compact-path{display:flex;align-items:center;gap:14px;margin-top:40px;font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#b9ccbb}
+.brief-compact-path i{height:1px;width:clamp(35px,9vw,120px);background:#729280}
+@media(max-width:700px){.brief-builder{padding-top:50px;padding-bottom:48px}.brief-compact-main{display:block}.brief-compact-main h2{font-size:clamp(48px,12vw,70px)}.brief-compact-copy{margin-top:20px}.brief-compact-copy p{font-size:15px}.brief-compact-path{margin-top:30px}}
